@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "concerts")
@@ -33,6 +35,9 @@ public class Concert {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL)
+    private List<Review> reviews = new ArrayList<>();
 
     public enum Status {
         PLANIRAM, BIO_SAM, PROPUSTIO;
@@ -93,4 +98,7 @@ public class Concert {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    public List<Review> getReviews() { return reviews; }
+    public void setReviews(List<Review> reviews) { this.reviews = reviews; }
 }

@@ -17,7 +17,7 @@ public class ReviewService {
     }
 
     public List<Review> getByConcertId(Long concertId) {
-        return reviewRepository.findbyConcertId(concertId);
+        return reviewRepository.findByConcertId(concertId);
     }
 
     public void save(Review review, Concert concert) {
