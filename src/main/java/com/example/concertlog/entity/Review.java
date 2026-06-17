@@ -19,7 +19,7 @@ public class Review {
 
     @Min(value = 1, message = "Ocjena mora biti između 1 i 5")
     @Max(value = 5, message = "Ocjena mora biti između 1 i 5")
-    private int ocjena;
+    private Integer ocjena;
 
     private LocalDate datum;
 
@@ -41,10 +41,10 @@ public class Review {
         this.tekst = tekst;
     }
 
-    public int getOcjena() {
+    public Integer getOcjena() {
         return ocjena;
     }
-    public void setOcjena(int ocjena) {
+    public void setOcjena(Integer ocjena) {
         this.ocjena = ocjena;
     }
 
